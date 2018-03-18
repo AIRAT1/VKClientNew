@@ -5,6 +5,7 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 import de.android.ayrathairullin.rest.RestClient;
+import de.android.ayrathairullin.rest.api.AccountApi;
 import de.android.ayrathairullin.rest.api.BoardApi;
 import de.android.ayrathairullin.rest.api.GroupsApi;
 import de.android.ayrathairullin.rest.api.UsersApi;
@@ -56,6 +57,12 @@ public class RestModule {
     @Singleton
     public VideoApi provideVideoApi() {
         return mRestClient.createService(VideoApi.class);
+    }
+
+    @Provides
+    @Singleton
+    public AccountApi provideAccountApi() {
+        return mRestClient.createService(AccountApi.class);
     }
 
 }
