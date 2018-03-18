@@ -6,7 +6,7 @@ android {
     compileSdkVersion 26
     buildToolsVersion "26.0.1"
     defaultConfig {
-        applicationId "info.fandroid.fandroidvk"
+        applicationId "de.android.ayrathairullin.vkclient"
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 1
