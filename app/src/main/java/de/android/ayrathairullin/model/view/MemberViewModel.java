@@ -10,6 +10,7 @@ import com.bumptech.glide.Glide;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.android.ayrathairullin.model.Member;
+import de.android.ayrathairullin.model.Profile;
 import de.android.ayrathairullin.ui.view.holder.BaseViewHolder;
 import de.android.ayrathairullin.vkclient.R;
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -32,7 +33,10 @@ public class MemberViewModel extends BaseViewModel{
         this.mFullName = member.getFullName();
     }
 
-
+    public MemberViewModel (Profile profile) {
+        this.photo = profile.getPhoto();
+        this.mFullName = profile.getFullName();
+    }
 
     @Override
     public LayoutTypes getType() {

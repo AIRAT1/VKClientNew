@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-
-    android:background="@color/colorDefaultWhite">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="@color/colorDefaultWhite">
 
     <android.support.v7.widget.CardView
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -13,7 +14,8 @@
         android:layout_below="@+id/cv_top"
         android:layout_gravity="center"
         android:layout_marginBottom="8dp"
-        card_view:cardCornerRadius="0dp">
+        card_view:cardCornerRadius="0dp"
+        >
 
         <RelativeLayout
             android:id="@+id/rv_links"
@@ -22,8 +24,7 @@
             android:layout_centerVertical="true"
             android:layout_gravity="center"
             android:background="?android:attr/selectableItemBackground"
-            android:clickable="true"
-            android:focusable="true"
+
             android:paddingBottom="16dp"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
