@@ -2,6 +2,7 @@ package de.android.ayrathairullin.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.widget.Toast;
 
 import com.arellomobile.mvp.presenter.InjectPresenter;
@@ -22,15 +23,21 @@ import com.vk.sdk.api.VKError;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 import de.android.ayrathairullin.CurrentUser;
 import de.android.ayrathairullin.MyApplication;
 import de.android.ayrathairullin.consts.ApiConstants;
 import de.android.ayrathairullin.model.Profile;
 import de.android.ayrathairullin.mvp.presenter.MainPresenter;
 import de.android.ayrathairullin.mvp.view.MainView;
+import de.android.ayrathairullin.rest.api.AccountApi;
+import de.android.ayrathairullin.rest.model.request.AccountRegisterDeviceRequest;
 import de.android.ayrathairullin.ui.fragment.BaseFragment;
 import de.android.ayrathairullin.ui.fragment.NewsFeedFragment;
 import de.android.ayrathairullin.vkclient.R;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 public class MainActivity extends BaseActivity implements MainView {
 
@@ -40,6 +47,9 @@ public class MainActivity extends BaseActivity implements MainView {
     private Drawer mDrawer;
 
     private AccountHeader mAccountHeader;
+
+    @Inject
+    AccountApi mAccountApi;
 
 
     @Override
@@ -95,6 +105,13 @@ public class MainActivity extends BaseActivity implements MainView {
         Toast.makeText(this, "Current user id: " + CurrentUser.getId(), Toast.LENGTH_LONG).show();
         setContent(new NewsFeedFragment());
         setUpDrawer();
+
+        // register device on VK server for push messages
+        mAccountApi.registerDevice(new AccountRegisterDeviceRequest(Settings.Secure.getString(getContentResolver(),
+                Settings.Secure.ANDROID_ID)).toMap())
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe();
     }
 
     @Override
