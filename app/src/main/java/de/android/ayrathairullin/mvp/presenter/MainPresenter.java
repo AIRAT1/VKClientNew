@@ -126,7 +126,6 @@ public class MainPresenter extends MvpPresenter<MainView> {
             getViewState().showFragmentFromDrawer(fragment);
         }
     }
-
 }
 
 
