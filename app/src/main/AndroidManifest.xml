@@ -29,6 +29,9 @@
         <activity
             android:name="de.android.ayrathairullin.ui.activity.CreatePostActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"/>
+        <activity
+            android:name="de.android.ayrathairullin.ui.activity.SettingActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
     </application>
 
 </manifest>

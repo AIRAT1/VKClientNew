@@ -15,6 +15,7 @@ import de.android.ayrathairullin.model.Profile;
 import de.android.ayrathairullin.mvp.view.MainView;
 import de.android.ayrathairullin.rest.api.UsersApi;
 import de.android.ayrathairullin.rest.model.request.UsersGetRequestModel;
+import de.android.ayrathairullin.ui.activity.SettingActivity;
 import de.android.ayrathairullin.ui.fragment.BaseFragment;
 import de.android.ayrathairullin.ui.fragment.BoardFragment;
 import de.android.ayrathairullin.ui.fragment.InfoFragment;
@@ -107,6 +108,9 @@ public class MainPresenter extends MvpPresenter<MainView> {
             case 2:
                 fragment = new MyPostsFragment();
                 break;
+            case 3:
+                getViewState().startActivityFromDrawer(SettingActivity.class);
+                return;
             case 4:
                 fragment = new MembersFragment();
                 break;

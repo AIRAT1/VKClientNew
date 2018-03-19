@@ -162,6 +162,11 @@ public class MainActivity extends BaseActivity implements MainView {
     public void showFragmentFromDrawer(BaseFragment baseFragment) {
         setContent(baseFragment);
     }
+
+    @Override
+    public void startActivityFromDrawer(Class<?> act) {
+        startActivity(new Intent(MainActivity.this, act));
+    }
 }
 
 
