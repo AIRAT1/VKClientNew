@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">VKClient</string>
+    <string name="app_name">КИНО</string>
 
     <integer name="com_vk_sdk_AppId">6144709</integer>
 
@@ -32,7 +32,7 @@
     <string name="loading_failed">Ошибка загрузки. Убедитесь, что имя файла не содержит пробелы и кириллицу</string>
 
     <string name="message">Message</string>
-    <string name="vk_group_default_name">VKClient</string>
+    <string name="vk_group_default_name">КИНО</string>
 
     <string name="pref_push_notifications">Получать уведомления</string>
 
