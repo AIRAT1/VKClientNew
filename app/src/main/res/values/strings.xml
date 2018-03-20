@@ -17,7 +17,7 @@
     <string name="screen_name_members">Участники</string>
     <string name="screen_name_topics">Обсуждения</string>
     <string name="screen_name_info">Информация</string>
-    <!--<string name="screen_name_rules">Правила группы</string>-->
+    <string name="more_apps_in_google_play">Другие приложения в Google Play</string>
 
     <string name="screen_name_image">Изображение</string>
     <string name="screen_name_opened_post">Запись</string>
@@ -40,7 +40,7 @@
     <string name="pref_push_notification_members">Комментарии к моей записи</string>
     <string name="pref_push_notification_comment_replies">Ответы на мои комментарии</string>
     <string name="need_login">Для работы приложения небходимо авторизоваться!</string>
-    <!--<string name="group_rules">http://www.fandroid.info/gruppa-vzaimopomoshhi-dlya-nachinayushhih-android-razrabotchikov-i-programmistov-osvoim-android-vmeste/</string>-->
+    <string name="google_play_link">https://play.google.com/store/search?q=AIRIZZIO</string>
 
     <string name="title_links">Ссылки</string>
     <string name="title_contacts">Контакты</string>

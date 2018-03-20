@@ -18,6 +18,7 @@ import de.android.ayrathairullin.rest.model.request.UsersGetRequestModel;
 import de.android.ayrathairullin.ui.activity.SettingActivity;
 import de.android.ayrathairullin.ui.fragment.BaseFragment;
 import de.android.ayrathairullin.ui.fragment.BoardFragment;
+import de.android.ayrathairullin.ui.fragment.OtherAppsInGooglePlayFragment;
 import de.android.ayrathairullin.ui.fragment.InfoFragment;
 import de.android.ayrathairullin.ui.fragment.MembersFragment;
 import de.android.ayrathairullin.ui.fragment.MyPostsFragment;
@@ -119,6 +120,9 @@ public class MainPresenter extends MvpPresenter<MainView> {
                 break;
             case 6:
                 fragment = new InfoFragment();
+                break;
+            case 7:
+                fragment = new OtherAppsInGooglePlayFragment();
                 break;
         }
 

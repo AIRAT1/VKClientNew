@@ -73,8 +73,8 @@ public class MainActivity extends BaseActivity implements MainView {
                 .withIcon(GoogleMaterial.Icon.gmd_record_voice_over);
         PrimaryDrawerItem item6 = new PrimaryDrawerItem().withIdentifier(6).withName(R.string.screen_name_info)
                 .withIcon(GoogleMaterial.Icon.gmd_info);
-//        PrimaryDrawerItem item7 = new PrimaryDrawerItem().withIdentifier(7).withName(R.string.screen_name_rules)
-//                .withIcon(GoogleMaterial.Icon.gmd_assignment);
+        PrimaryDrawerItem item7 = new PrimaryDrawerItem().withIdentifier(7).withName(R.string.more_apps_in_google_play)
+                .withIcon(GoogleMaterial.Icon.gmd_assignment);
 
         mAccountHeader = new AccountHeaderBuilder()
                 .withActivity(this)
@@ -87,7 +87,7 @@ public class MainActivity extends BaseActivity implements MainView {
                 .withAccountHeader(mAccountHeader)
                 .addDrawerItems(item1, item2, item3,
                         new SectionDrawerItem().withName("Группа"),
-                        item4, item5, item6)
+                        item4, item5, item6, item7)
                 .withOnDrawerItemClickListener((view, position, drawerItem) -> {
                     mPresenter.drawerItemClick((int) drawerItem.getIdentifier());
                     return false;
