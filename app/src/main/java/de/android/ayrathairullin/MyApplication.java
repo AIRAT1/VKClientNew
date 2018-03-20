@@ -1,6 +1,7 @@
 package de.android.ayrathairullin;
 
 import android.app.Application;
+import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.widget.ImageView;
@@ -20,10 +21,13 @@ import io.realm.RealmConfiguration;
 public class MyApplication extends Application {
 
     private static ApplicationComponent sApplicationComponent;
+    private static Context context;
 
     @Override
     public void onCreate() {
         super.onCreate();
+
+        MyApplication.context = getApplicationContext();
 
         initComponent();
 
@@ -52,5 +56,9 @@ public class MyApplication extends Application {
 
     public static ApplicationComponent getApplicationComponent() {
         return sApplicationComponent;
+    }
+
+    public static Context getContext() {
+        return context;
     }
 }

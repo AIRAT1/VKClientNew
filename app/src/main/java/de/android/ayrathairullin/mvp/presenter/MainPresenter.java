@@ -1,5 +1,8 @@
 package de.android.ayrathairullin.mvp.presenter;
 
+import android.content.Context;
+import android.content.Intent;
+
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
 
@@ -18,11 +21,12 @@ import de.android.ayrathairullin.rest.model.request.UsersGetRequestModel;
 import de.android.ayrathairullin.ui.activity.SettingActivity;
 import de.android.ayrathairullin.ui.fragment.BaseFragment;
 import de.android.ayrathairullin.ui.fragment.BoardFragment;
-import de.android.ayrathairullin.ui.fragment.OtherAppsInGooglePlayFragment;
 import de.android.ayrathairullin.ui.fragment.InfoFragment;
 import de.android.ayrathairullin.ui.fragment.MembersFragment;
 import de.android.ayrathairullin.ui.fragment.MyPostsFragment;
 import de.android.ayrathairullin.ui.fragment.NewsFeedFragment;
+import de.android.ayrathairullin.ui.fragment.OtherAppsInGooglePlayFragment;
+import de.android.ayrathairullin.vkclient.R;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
@@ -123,6 +127,16 @@ public class MainPresenter extends MvpPresenter<MainView> {
                 break;
             case 7:
                 fragment = new OtherAppsInGooglePlayFragment();
+                break;
+            case 8:
+                Context context = MyApplication.getContext();
+                Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                String title = context.getString(R.string.app_name);
+                String body = context.getString(R.string.share_body) + context.getString(R.string.share_url);
+                sharingIntent.putExtra(Intent.EXTRA_SUBJECT, title);
+                sharingIntent.putExtra(Intent.EXTRA_TEXT, body);
+                context.startActivity(Intent.createChooser(sharingIntent, context.getString(R.string.share_via)));
                 break;
         }
 

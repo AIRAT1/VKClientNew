@@ -42,7 +42,12 @@
     <string name="need_login">Для работы приложения небходимо авторизоваться!</string>
     <string name="google_play_link">https://play.google.com/store/search?q=AIRIZZIO</string>
 
+    <string name="share">Поделиться</string>
+
     <string name="title_links">Ссылки</string>
     <string name="title_contacts">Контакты</string>
+    <string name="share_body">Попробуй это приложение: </string>
+    <string name="share_url" translatable="false">https://play.google.com/store/apps/details?id=de.android.ayrathairullin.vkclient</string>
+    <string name="share_via">Поделиться с помощью</string>
 
 </resources>
